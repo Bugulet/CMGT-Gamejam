@@ -38,7 +38,8 @@ public class CharacterMovement : MonoBehaviour
             //transform.Translate(new Vector3(0,0, 1) * Speed * Time.deltaTime, Space.World);
         }
         velocity.Normalize();
-        transform.Translate(velocity * Speed * Time.deltaTime, Space.World);
+        GetComponent<Rigidbody>().AddForce(velocity * Speed * Time.deltaTime);
+        //transform.Translate(velocity * Speed * Time.deltaTime, Space.World);
 
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
