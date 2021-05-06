@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class BulletMovement : MonoBehaviour
 {
+    
     [SerializeField]
     private float Speed = 1f;
-    // Start is called before the first frame update
+
+    public int MaxPassThrough = 2;
+    private float currentPassThrough = 0;
+
+
     void Start()
     {
         Destroy(gameObject, 3);
@@ -16,6 +21,18 @@ public class BulletMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * Speed * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            currentPassThrough++;
+            if (currentPassThrough >= MaxPassThrough)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
 }

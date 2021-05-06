@@ -33,6 +33,13 @@ public class EnemyMovement : MonoBehaviour
         {
             SpeedMultiplier = 0;
         }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            CurrentSceneManager.PlayerHealth--;
+            Destroy(gameObject);
+            //TODO: add explosion animation for enemy here
+        }
     }
 
     void ResumeSpeed()
