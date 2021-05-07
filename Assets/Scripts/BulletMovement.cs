@@ -8,7 +8,7 @@ public class BulletMovement : MonoBehaviour
     [SerializeField]
     private float Speed = 1f;
 
-    public int MaxPassThrough = 2;
+    public int MaxPassThrough = 1;
     private float currentPassThrough = 0;
 
 

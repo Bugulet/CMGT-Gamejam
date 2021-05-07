@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3292695818123926636}
   - component: {fileID: 3683137102816991324}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VFX_AoE_Slow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 3292695819172788928}
   - component: {fileID: 3292695819172788931}
   - component: {fileID: 3292695819172788930}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Clock_Ground_Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 4147413714164076945}
   - component: {fileID: 5824264559528740004}
   - component: {fileID: 8777067112765876088}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5031963326013289365}
   - component: {fileID: 5031963326013289363}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Manus_Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5031963326505172091}
   - component: {fileID: 5031963326505172089}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Manus_Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 5031963327127271079}
   - component: {fileID: 5031963327127267672}
   - component: {fileID: 5031963327127267673}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Clock_Manus_S_Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 5031963327169326870}
   - component: {fileID: 5031963327169326859}
   - component: {fileID: 5031963327169326856}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Clock_Manus_Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -713,6 +713,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AoE_Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868926487281819685, guid: 2021bdcbb4c65a446aac2c20fbd9a307,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868926487281819685, guid: 2021bdcbb4c65a446aac2c20fbd9a307,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerAOE
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2021bdcbb4c65a446aac2c20fbd9a307, type: 3}

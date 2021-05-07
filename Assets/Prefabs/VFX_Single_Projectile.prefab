@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 514175502517374733}
   - component: {fileID: 5949429243743799640}
   - component: {fileID: 2532304020893259673}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 7258398787172489318}
   - component: {fileID: 621021679542691741}
   - component: {fileID: 933008005928284448}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VFX_Single_Projectile
   m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 20
-  MaxPassThrough: 2
+  MaxPassThrough: 1
 --- !u!65 &933008005928284448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 7258398787308678802}
   - component: {fileID: 7258398787308678800}
   - component: {fileID: 7258398787308678803}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vi_part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4945,7 +4945,7 @@ GameObject:
   - component: {fileID: 7258398787373163411}
   - component: {fileID: 7258398787373163409}
   - component: {fileID: 7258398787373163408}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Circles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9716,7 +9716,7 @@ GameObject:
   - component: {fileID: 7258398787390371653}
   - component: {fileID: 7258398787390371651}
   - component: {fileID: 7258398787390371650}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14467,7 +14467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7258398787407729016}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: rotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14500,7 +14500,7 @@ GameObject:
   - component: {fileID: 7258398787774764219}
   - component: {fileID: 7258398787774764217}
   - component: {fileID: 7258398787774764216}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Circles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19289,7 +19289,7 @@ GameObject:
   - component: {fileID: 7258398787825146355}
   - component: {fileID: 7258398787825146353}
   - component: {fileID: 7258398787825146352}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24043,7 +24043,7 @@ GameObject:
   - component: {fileID: 7258398788120666676}
   - component: {fileID: 7258398788120666674}
   - component: {fileID: 7258398788120666677}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28796,7 +28796,7 @@ GameObject:
   - component: {fileID: 7258398788220307035}
   - component: {fileID: 7258398788220307033}
   - component: {fileID: 7258398788220307032}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33550,7 +33550,7 @@ GameObject:
   - component: {fileID: 7258398788330766993}
   - component: {fileID: 7258398788330766992}
   - component: {fileID: 7258398788330766995}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Proj_Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33648,7 +33648,7 @@ GameObject:
   - component: {fileID: 7258398788361765817}
   - component: {fileID: 7258398788361765815}
   - component: {fileID: 7258398788361765814}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: mian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38401,7 +38401,7 @@ GameObject:
   - component: {fileID: 7258398788831978444}
   - component: {fileID: 7258398788831978442}
   - component: {fileID: 7258398788831978445}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vi_part (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43180,7 +43180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7258398789046871843}
   - component: {fileID: 7258398789046871840}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43231,7 +43231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7258398789167158211}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

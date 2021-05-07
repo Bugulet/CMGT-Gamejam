@@ -6,7 +6,7 @@ public class ShootingScript : MonoBehaviour
 {
     static public float fireRate=3;
     static public int bulletLevel = 1, aoeLevel = 1, lineLevel = 1;
-    static public float bulletDamage = 0.1f, aoeDamage = 0.2f, lineDamage = 0.5f;
+    static public float bulletDamage = 0.1f, aoeDamage = 0.2f, lineDamage = 1f;
     static public float bulletSpeed = 10, aoeTime = 3, lineTime = 3;
     static public float aoeSize = 1, lineSize = 1;
     static public bool tripleShot = false;
@@ -25,11 +25,15 @@ public class ShootingScript : MonoBehaviour
 
     public WeaponType weaponType;
 
+    private bool canShootAoE = true;
+    private bool canSHootWall = true;
+
     private void ShootingUpdate()
     {
+        
         if (bulletLevel > 1)
         {
-            bulletDamage = 0.15f;
+            bulletDamage = 0.2f;
         }
         if (bulletLevel > 2)
         {
@@ -64,7 +68,7 @@ public class ShootingScript : MonoBehaviour
         }
         if (lineLevel > 3)
         {
-            lineDamage = 0.8f;
+            lineDamage = 2f;
         }
     }
     // Start is called before the first frame update
@@ -109,7 +113,7 @@ public class ShootingScript : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha8))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             weaponType = WeaponType.bullet;
         }
@@ -137,9 +141,15 @@ public class ShootingScript : MonoBehaviour
                 case WeaponType.aoe:
                     if (Physics.Raycast(ray, out hit))
                     {
-                        if (hit.transform.gameObject.tag == "Floor")
+                        
+                        if (hit.transform.gameObject.tag == "Floor" && canShootAoE==true)
                         {
-                            Instantiate(AoEObject, hit.point, Quaternion.identity);
+                            GameObject aoe= Instantiate(AoEObject, hit.point, Quaternion.identity);
+                            aoe.transform.localScale *= aoeSize;
+                            aoe.GetComponent<DestroyAfterSeconds>().DestroyTime = aoeTime;
+                            aoe.GetComponent<DestroyAfterSeconds>().DestroyManually();
+                            canShootAoE = false;
+                            Invoke("ResetAOE", aoeTime);
                         }
                     }
                    
@@ -147,10 +157,15 @@ public class ShootingScript : MonoBehaviour
                 case WeaponType.wall:
                     if (Physics.Raycast(ray, out hit))
                     {
-                        if (hit.transform.gameObject.tag == "Floor")
+                        if (hit.transform.gameObject.tag == "Floor" && canSHootWall==true)
                         {
                            GameObject wall= Instantiate(WallObject, hit.point, Quaternion.identity);
                             wall.transform.rotation = gameObject.transform.rotation;
+                            wall.transform.localScale *= lineSize;
+                            wall.GetComponent<DestroyAfterSeconds>().DestroyTime = aoeTime;
+                            wall.GetComponent<DestroyAfterSeconds>().DestroyManually();
+                            canSHootWall = false;
+                            Invoke("ResetWall", lineTime);
                         }
                     }
                     break;
@@ -179,5 +194,14 @@ public class ShootingScript : MonoBehaviour
             Instantiate(Bullet, BulletOrigin.transform.position, bulletRotationLeft);
             Instantiate(Bullet, BulletOrigin.transform.position, bulletRotationRight);
         }
+    }
+
+    private void ResetAOE()
+    {
+        canShootAoE = true;
+    }
+    private void ResetWall()
+    {
+        canSHootWall = true;
     }
 }

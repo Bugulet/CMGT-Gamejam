@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     [HideInInspector]
     public float SpeedMultiplier = 1;
     private Transform Player;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +28,13 @@ public class EnemyMovement : MonoBehaviour
         print(collision.gameObject.name);
         if (collision.gameObject.CompareTag("PlayerProjectile"))
         {
-            SpeedMultiplier -= 0.1f;
+            SpeedMultiplier -= ShootingScript.bulletDamage;
         }
-        if (SpeedMultiplier < 0)
+        
+
+        if (SpeedMultiplier < 0.1f)
         {
-            SpeedMultiplier = 0;
+            SpeedMultiplier = 0.1f;
         }
 
         if (collision.gameObject.tag == "Player")
@@ -39,6 +42,21 @@ public class EnemyMovement : MonoBehaviour
             CurrentSceneManager.PlayerHealth--;
             Destroy(gameObject);
             //TODO: add explosion animation for enemy here
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("PlayerAOE"))
+        {
+            SpeedMultiplier -= ShootingScript.aoeDamage*Time.deltaTime;
+        }
+        if (other.gameObject.CompareTag("PlayerWall"))
+        {
+            SpeedMultiplier -= ShootingScript.lineDamage*Time.deltaTime;
+        }
+        if (SpeedMultiplier < 0.1f)
+        {
+            SpeedMultiplier = 0.1f;
         }
     }
 

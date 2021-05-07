@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3226716804719778765}
   - component: {fileID: 3226716804719778762}
   - component: {fileID: 3226716804719778763}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Clock_Manus_S_Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,9 +91,9 @@ GameObject:
   - component: {fileID: 3226716804977915549}
   - component: {fileID: 5387170206382809733}
   - component: {fileID: 6341336212768764296}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: 'VFX_Shield '
-  m_TagString: Untagged
+  m_TagString: PlayerWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,8 +158,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.7201347, y: 6.5023756, z: 0.9745674}
-  m_Center: {x: 1.0217333, y: 0.24987411, z: -0.51340866}
+  m_Size: {x: 6.095887, y: 6.1436205, z: 0.9745674}
+  m_Center: {x: 1.0395341, y: 0.07049656, z: -0.51340866}
 --- !u!1 &3226716805173433640
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 3226716805173433635}
   - component: {fileID: 3226716805173433636}
   - component: {fileID: 3226716805173433638}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Clock_Ground_Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 3226716805179108678}
   - component: {fileID: 3226716805179108675}
   - component: {fileID: 3226716805179108676}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3226716805521184892}
   - component: {fileID: 3226716805521184891}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3226716805987995345}
   - component: {fileID: 3226716805987995344}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Scaler_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3226716806192671182}
   - component: {fileID: 3226716806192671181}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Scaler_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 3226716806250094927}
   - component: {fileID: 3226716806250094924}
   - component: {fileID: 3226716806250094925}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
