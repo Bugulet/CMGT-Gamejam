@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
-    public float fireRate=1;
+    static public float fireRate=3;
+    static public int bulletLevel = 1, aoeLevel = 1, lineLevel = 1;
+    static public float bulletDamage = 0.1f, aoeDamage = 0.2f, lineDamage = 0.5f;
+    static public float bulletSpeed = 10, aoeTime = 3, lineTime = 3;
+    static public float aoeSize = 1, lineSize = 1;
+    static public bool tripleShot = false;
 
     [SerializeField]
     private GameObject Bullet;
@@ -19,16 +24,92 @@ public class ShootingScript : MonoBehaviour
     public enum WeaponType{ bullet,aoe,wall};
 
     public WeaponType weaponType;
+
+    private void ShootingUpdate()
+    {
+        if (bulletLevel > 1)
+        {
+            bulletDamage = 0.15f;
+        }
+        if (bulletLevel > 2)
+        {
+            tripleShot = true;
+        }
+        if (bulletLevel > 3)
+        {
+            fireRate = 6;
+            bulletSpeed = 20;
+        }
+
+        if (aoeLevel > 1)
+        {
+            aoeSize = 1.5f;
+        }
+        if (aoeLevel > 2)
+        {
+            aoeDamage = 0.5f;
+        }
+        if (aoeLevel > 3)
+        {
+            aoeTime = 5;
+        }
+
+        if (lineLevel > 1)
+        {
+            lineTime = 5f;
+        }
+        if (lineLevel > 2)
+        {
+            lineSize = 1.5f;
+        }
+        if (lineLevel > 3)
+        {
+            lineDamage = 0.8f;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
         weaponType = WeaponType.bullet;
     }
 
+    public void IncrementBullet()
+    {
+        bulletLevel++;
+    }
+    public void IncrementAOE()
+    {
+        aoeLevel++;
+    }
+
+    public void IncrementLine()
+    {
+        lineLevel++;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        ShootingUpdate();
+
+        #region Cheats
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            IncrementBullet();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            IncrementAOE();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            IncrementLine();
+        }
+        #endregion
+
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha8))
         {
             weaponType = WeaponType.bullet;
         }
@@ -87,6 +168,16 @@ public class ShootingScript : MonoBehaviour
 
     private void ShootBullet()
     {
+        Quaternion bulletRotation = transform.rotation;
+        Quaternion bulletRotationLeft = Quaternion.Euler(transform.eulerAngles.x,transform.eulerAngles.y-15,transform.eulerAngles.z);
+        Quaternion bulletRotationRight = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y + 15, transform.eulerAngles.z);
+
         Instantiate(Bullet, BulletOrigin.transform.position, transform.rotation);
+
+        if (tripleShot)
+        {
+            Instantiate(Bullet, BulletOrigin.transform.position, bulletRotationLeft);
+            Instantiate(Bullet, BulletOrigin.transform.position, bulletRotationRight);
+        }
     }
 }
