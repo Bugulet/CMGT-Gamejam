@@ -610,6 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b527781ff727243ad77b856ce578c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 3
   Bullet: {fileID: 7258398787172489321, guid: 0e2cba99a3a1dde48981a7ce1b4c8e78, type: 3}
   AoEObject: {fileID: 3292695818123926639, guid: 0f9ff028104f14a4ba1bcf71041fb248,
     type: 3}

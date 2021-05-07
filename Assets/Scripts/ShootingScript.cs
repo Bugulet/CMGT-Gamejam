@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
+    public float fireRate=1;
+
     [SerializeField]
     private GameObject Bullet;
     [SerializeField]
@@ -49,7 +51,7 @@ public class ShootingScript : MonoBehaviour
             switch (weaponType)
             {
                 case WeaponType.bullet:
-                    Instantiate(Bullet, BulletOrigin.transform.position, transform.rotation);
+                    InvokeRepeating("ShootBullet",0,1f/fireRate);
                     break;
                 case WeaponType.aoe:
                     if (Physics.Raycast(ray, out hit))
@@ -76,5 +78,15 @@ public class ShootingScript : MonoBehaviour
             }
 
         }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            CancelInvoke("ShootBullet");
+        }
+    }
+
+    private void ShootBullet()
+    {
+        Instantiate(Bullet, BulletOrigin.transform.position, transform.rotation);
     }
 }
