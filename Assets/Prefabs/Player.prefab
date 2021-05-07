@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 61e13ad54857221419bc0545ce65291c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,7 +152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 61e13ad54857221419bc0545ce65291c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -245,7 +245,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 61e13ad54857221419bc0545ce65291c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -338,7 +338,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 61e13ad54857221419bc0545ce65291c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -466,7 +466,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 61e13ad54857221419bc0545ce65291c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -564,7 +564,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 61e13ad54857221419bc0545ce65291c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -610,8 +610,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b527781ff727243ad77b856ce578c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 4763109257401789481, guid: e2faacfc0864a6e41bd9169b998ea96c, type: 3}
+  Bullet: {fileID: 7258398787172489321, guid: 0e2cba99a3a1dde48981a7ce1b4c8e78, type: 3}
+  AoEObject: {fileID: 3292695818123926639, guid: 0f9ff028104f14a4ba1bcf71041fb248,
+    type: 3}
+  WallObject: {fileID: 3226716804977915550, guid: e8152cc22aa76d84fb047d18f72909e5,
+    type: 3}
   BulletOrigin: {fileID: 7981656635248671213}
+  weaponType: 0
 --- !u!54 &1925779512
 Rigidbody:
   m_ObjectHideFlags: 0
