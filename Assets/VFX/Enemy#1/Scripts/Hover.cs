@@ -23,6 +23,7 @@ public class Hover : MonoBehaviour
     {
         tempPosition = this.transform.position;
         tempPosition.x += horizontalSpeed;
+        tempPosition.y = 2f;
         tempPosition.y = Mathf.Sin(Time.realtimeSinceStartup * verticalSpeed) * amplitude;
         transform.position = tempPosition;
     }

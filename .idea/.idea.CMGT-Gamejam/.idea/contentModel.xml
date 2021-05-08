@@ -7,17 +7,25 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="followCharacter.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="BulletMovement.cs" t="Include" />
           <e p="CameraMovement.cs" t="Include" />
           <e p="CharacterMovement.cs" t="Include" />
+          <e p="CollisionEventTrigger.cs" t="Include" />
           <e p="CurrentSceneManager.cs" t="Include" />
+          <e p="DestroyAfterSeconds.cs" t="Include" />
           <e p="EnemyMovement.cs" t="Include" />
           <e p="EnemyProperties.cs" t="Include" />
+          <e p="EnemySpawner.cs" t="Include" />
           <e p="EnemyTimerUi.cs" t="Include" />
           <e p="PlayerHealthUI.cs" t="Include" />
+          <e p="SceneChanger.cs" t="Include" />
           <e p="ShootingScript.cs" t="Include" />
+          <e p="ShopButtonScript.cs" t="Include" />
+          <e p="ShopScript.cs" t="Include" />
           <e p="SimpleCameraController.cs" t="Include" />
+          <e p="UpgradeUIShowcase.cs" t="Include" />
         </e>
         <e p="TutorialInfo" t="Include">
           <e p="Scripts" t="Include">
@@ -31,6 +39,7 @@
           <e p="Enemy#1" t="Include">
             <e p="Scripts" t="Include">
               <e p="Hover.cs" t="Include" />
+              <e p="Rotate.cs" t="Include" />
               <e p="RotatePropeller.cs" t="Include" />
             </e>
           </e>

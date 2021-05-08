@@ -18,6 +18,10 @@ public class ShootingScript : MonoBehaviour
     [SerializeField]
     private GameObject WallObject;
 
+    [SerializeField] private bool isShooting;
+    [SerializeField] private Animator playerAnimator;
+    [SerializeField] private GameObject player;
+
     [SerializeField]
     private GameObject BulletOrigin;
 
@@ -27,6 +31,7 @@ public class ShootingScript : MonoBehaviour
 
     private bool canShootAoE = true;
     private bool canSHootWall = true;
+    
 
     private void ShootingUpdate()
     {
@@ -74,6 +79,7 @@ public class ShootingScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerAnimator = player.GetComponent<Animator>();
         weaponType = WeaponType.bullet;
     }
 
@@ -133,6 +139,8 @@ public class ShootingScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            playerAnimator.SetBool("isCasting", true);
+            isShooting = true;
             switch (weaponType)
             {
                 case WeaponType.bullet:
@@ -178,11 +186,13 @@ public class ShootingScript : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             CancelInvoke("ShootBullet");
+            playerAnimator.SetBool("isCasting", false);
         }
     }
 
     private void ShootBullet()
     {
+       
         Quaternion bulletRotation = transform.rotation;
         Quaternion bulletRotationLeft = Quaternion.Euler(transform.eulerAngles.x,transform.eulerAngles.y-15,transform.eulerAngles.z);
         Quaternion bulletRotationRight = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y + 15, transform.eulerAngles.z);
