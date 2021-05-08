@@ -6,7 +6,7 @@ public class ShootingScript : MonoBehaviour
 {
     static public float fireRate=3;
     static public int bulletLevel = 1, aoeLevel = 1, lineLevel = 1;
-    static public float bulletDamage = 0.1f, aoeDamage = 0.2f, lineDamage = 1f;
+    static public float bulletDamage = 0.1f, aoeDamage = 0.5f, lineDamage = 1f;
     static public float bulletSpeed = 10, aoeTime = 3, lineTime = 3;
     static public float aoeSize = 1, lineSize = 1;
     static public bool tripleShot = false;
@@ -56,7 +56,7 @@ public class ShootingScript : MonoBehaviour
         }
         if (aoeLevel > 2)
         {
-            aoeDamage = 0.5f;
+            aoeDamage = 1f;
         }
         if (aoeLevel > 3)
         {

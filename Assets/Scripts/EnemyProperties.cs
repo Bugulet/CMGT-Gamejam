@@ -21,7 +21,9 @@ public class EnemyProperties : MonoBehaviour
         CountDownValue -= Time.deltaTime;
         if (CountDownValue <= 0)
         {
-            Destroy(gameObject);
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(true);
+            Destroy(gameObject, 1);
         }
     }
 }

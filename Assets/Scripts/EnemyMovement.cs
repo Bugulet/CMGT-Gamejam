@@ -19,44 +19,66 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(Player);
-        transform.Translate(Vector3.forward * Speed * SpeedMultiplier * Time.deltaTime);
+        if (SpeedMultiplier < 1f)
+        {
+            transform.GetChild(1).gameObject.SetActive(true);
+        }
+        else
+        {
+            transform.GetChild(1).gameObject.SetActive(false);
+        }
+        if (transform.GetChild(0).gameObject.activeSelf == true)
+        {
+            transform.LookAt(Player);
+            transform.Translate(Vector3.forward * Speed * SpeedMultiplier * Time.deltaTime);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        print(collision.gameObject.name);
-        if (collision.gameObject.CompareTag("PlayerProjectile"))
+        if (transform.GetChild(0).gameObject.activeSelf == true)
         {
-            SpeedMultiplier -= ShootingScript.bulletDamage;
-        }
-        
+            //print(collision.gameObject.name);
+            if (collision.gameObject.CompareTag("PlayerProjectile"))
+            {
+                SpeedMultiplier -= ShootingScript.bulletDamage;
+            }
 
-        if (SpeedMultiplier < 0.1f)
-        {
-            SpeedMultiplier = 0.1f;
-        }
+            transform.GetChild(3).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(true);
 
-        if (collision.gameObject.tag == "Player")
-        {
-            CurrentSceneManager.PlayerHealth--;
-            Destroy(gameObject);
-            //TODO: add explosion animation for enemy here
+            if (SpeedMultiplier < 0.1f)
+            {
+                SpeedMultiplier = 0.1f;
+            }
+
+            if (collision.gameObject.tag == "Player")
+            {
+                print(CurrentSceneManager.PlayerHealth);
+                CurrentSceneManager.PlayerHealth--;
+                transform.GetChild(0).gameObject.SetActive(false);
+                transform.GetChild(2).gameObject.SetActive(true);
+                Destroy(gameObject, 1);
+                //TODO: add explosion animation for enemy here
+            }
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("PlayerAOE"))
+        if (transform.GetChild(0).gameObject.activeSelf == true)
         {
-            SpeedMultiplier -= ShootingScript.aoeDamage*Time.deltaTime;
-        }
-        if (other.gameObject.CompareTag("PlayerWall"))
-        {
-            SpeedMultiplier -= ShootingScript.lineDamage*Time.deltaTime;
-        }
-        if (SpeedMultiplier < 0.1f)
-        {
-            SpeedMultiplier = 0.1f;
+            if (other.gameObject.CompareTag("PlayerAOE"))
+            {
+                SpeedMultiplier -= ShootingScript.aoeDamage * Time.deltaTime;
+            }
+            if (other.gameObject.CompareTag("PlayerWall"))
+            {
+                SpeedMultiplier -= ShootingScript.lineDamage * Time.deltaTime;
+            }
+            if (SpeedMultiplier < 0.1f)
+            {
+                SpeedMultiplier = 0.1f;
+            }
         }
     }
 

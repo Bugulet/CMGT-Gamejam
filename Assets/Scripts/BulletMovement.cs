@@ -25,13 +25,14 @@ public class BulletMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag=="wall")
         {
-            currentPassThrough++;
-            if (currentPassThrough >= MaxPassThrough)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
+            //currentPassThrough++;
+            //if (currentPassThrough >= MaxPassThrough)
+            //{
+                
+            //}
         }
     }
 
